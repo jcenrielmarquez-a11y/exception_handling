@@ -13,5 +13,9 @@ class CalculatorRunner(SimpleCalculator):
                     num_1 = self.stored_value if choice == "y" else float(input("Enter first number: "))
                 else:
                     num_1 = float(input("Enter first number: "))
+
                 num_2 = float(input("Enter second number: "))
                 operation = input("Choose operation (+, -, *, /): ").strip()
+
+                result = self.calculate(num_1, num_2, operation)
+                print(f"Result = {result}")
