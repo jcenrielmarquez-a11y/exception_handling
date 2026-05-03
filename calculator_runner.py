@@ -8,9 +8,10 @@ class CalculatorRunner(SimpleCalculator):
         print("=== Simple Calculator ===")
         while True:
             try:
-                # Decide
                 if self.stored_value is not None:
                     choice = input("Use stored value as first number? [y/n]: ").strip().lower()
                     num_1 = self.stored_value if choice == "y" else float(input("Enter first number: "))
                 else:
                     num_1 = float(input("Enter first number: "))
+                num_2 = float(input("Enter second number: "))
+                operation = input("Choose operation (+, -, *, /): ").strip()
