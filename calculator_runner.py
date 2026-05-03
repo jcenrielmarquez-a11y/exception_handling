@@ -21,9 +21,18 @@ class CalculatorRunner(SimpleCalculator):
                 print(f"Result = {result}")
 
                 if input("Save result for later? [y/n]: ").strip().lower() == "y":
-                self.stored_value = result
+                   self.stored_value = result
 
             except ZeroDivisionError as e:
                 print("Error:", e)
             except ValueError as e:
                 print("Error:", e)
+
+            again = input("Do another calculation? [y/n]: ").strip().lower()
+            if again != "y":
+                print("Calculator session ended. Thank You!")
+                break
+
+if __name__ == "__main__":
+   runner = CalculatorRunner()
+   runner.run()
