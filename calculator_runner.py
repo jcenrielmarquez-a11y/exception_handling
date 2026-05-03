@@ -19,3 +19,11 @@ class CalculatorRunner(SimpleCalculator):
 
                 result = self.calculate(num_1, num_2, operation)
                 print(f"Result = {result}")
+
+                if input("Save result for later? [y/n]: ").strip().lower() == "y":
+                self.stored_value = result
+
+            except ZeroDivisionError as e:
+                print("Error:", e)
+            except ValueError as e:
+                print("Error:", e)
